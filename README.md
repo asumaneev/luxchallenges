@@ -1,9 +1,14 @@
-# challenge.00
+# Challenges
+There will be solved challenges within our super duper secret club
 
-Дано: 
-массив целых вещественных чисел
+# Repo struct
+Solved challenge itself represents static library. There always is an examle executable to play with it.
 
-Найти:
-последовательность чисел содержащуюся в исходном массиве, заданную индексом начала (1) и индексом конца (2) с наибольшей суммой элементов (3).
-Ответ три числа (1, 2, 3). Алгоритм должен иметь линейную сложность в зависимости от количества элементов массива.
-
+```
+├── 3rdparty [third-party libraries]
+│   ├── challenge.xx [solved challenge's source code]
+│   ├── challenge.yy ...
+│   ├── tests [unit tests on challenges]
+│   │   ├── challenge.xx
+│   │   ├── challenge.yy ...
+```
