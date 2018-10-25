@@ -4,6 +4,20 @@ set(BENCHMARK_ENABLE_TESTING OFF CACHE BOOL "Suppressing benchmark's tests" FORC
 set(BENCHMARK_ENABLE_INSTALL OFF CACHE BOOL "Suppressing benchmark's installation" FORCE)
 set(BENCHMARK_ENABLE_GTEST_TESTS OFF CACHE BOOL "Suppressing benchmark's tests" FORCE)
 
+find_program(CMAKE_CXX_CPPCHECK NAMES cppcheck)
+if (CMAKE_CXX_CPPCHECK)
+    list(
+        APPEND CMAKE_CXX_CPPCHECK
+            "--enable=all"
+            "--inconclusive"
+            "--suppress=missingIncludeSystem"
+            "--force"
+            "--inline-suppr"
+            "-i${CMAKE_CURRENT_SOURCE_DIR}/3rdparty"
+    )
+else()
+    message(WARNING "cppcheck is not found")
+endif()
 
 add_subdirectory(3rdparty/gtest)
 add_subdirectory(3rdparty/gbench)
@@ -13,7 +27,7 @@ if (DEFINED PERFORM_BENCHMARK)
     target_compile_definitions(challenge.00.task.exe
     PRIVATE
         PERFORM_BENCHMARK
-)
+    )
 endif()
 
 # add_subdirectory(tests)
