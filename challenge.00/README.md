@@ -8,7 +8,7 @@ Subsequence defined as indicies of head (1) and tail (2)  with maximal sum of el
 Result is three numbers (1, 2, 3). Algorithm must have liear complexity of number of elements in array.
 
 > Remark:
-> Subsequence is considered of maximal length
+> Subsequence is considered of maximal length (see test cases in [test](test/src/test.cpp))
 
 # Approaches
 I did not invented the algorithm by muself but took two here: http://e-maxx.ru/algo/maximum_average_segment
@@ -42,6 +42,14 @@ cmake ..
 cmake --build . --target challenge.00.task.bench [-j 4]
 ./challenge.00/challenge.00.task.bench
 ```
+##### Tests
+```
+mkdir build; cd build
+cmake ..
+cmake --build . --target challenge.00.test [-j 4]
+./challenge.00/test/challenge.00.test
+```
+
 # Further researches
 - Different containers.
     All benchmarkings were made on sequences of ```std::vector```. Other containers were not taken into account. There may be interesting results in case of ```std::list``` and cache misses.

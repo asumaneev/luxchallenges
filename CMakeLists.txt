@@ -23,7 +23,3 @@ add_subdirectory(3rdparty/gtest)
 add_subdirectory(3rdparty/gbench)
 
 add_subdirectory(challenge.00)
-
-# add_subdirectory(tests)
-# add_dependencies(challenge.00.tests challenge.00.task)
-# add_dependencies(challenge.00.tests googletest)
