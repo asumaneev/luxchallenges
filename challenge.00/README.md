@@ -35,9 +35,9 @@ cmake --build . --target challenge.00.task.exe [-j 4]
 ##### Benchmark solutions
 ```
 mkdir build; cd build
-cmake .. -DPERFORM_BENCHMARK
-cmake --build . --target challenge.00.task.exe [-j 4]a
-./challenge.00/challenge.00.task.exe
+cmake ..
+cmake --build . --target challenge.00.task.bench [-j 4]
+./challenge.00/challenge.00.task.bench
 ```
 # Further researches
 - Different containers.

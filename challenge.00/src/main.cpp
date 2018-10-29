@@ -1,25 +1,6 @@
+#include "main.hpp"
+
 #include <asumaneev/task.hpp>
-
-#include <cmath>
-#include <random>
-
-static std::vector<int> random_sequence(
-    const std::size_t number_of_elements) noexcept {
-    std::vector<int> result;
-    result.reserve(number_of_elements);
-
-    std::random_device rd{};
-    std::mt19937 gen{rd()};
-    std::normal_distribution<> d{0, 50};
-
-    while (result.size() < number_of_elements) {
-        result.push_back(static_cast<int>(std::round(d(gen))));
-    }
-
-    return result;
-}
-
-#ifndef PERFORM_BENCHMARK
 
 #include <algorithm>
 #include <exception>
@@ -87,59 +68,3 @@ int main() {
 
     return 0;
 }
-
-#else
-
-#include <benchmark/benchmark.h>
-
-static const auto large_sequence = random_sequence(10000000);
-
-static void BM_first_finder(benchmark::State& state) {
-    for (auto _ : state) {
-        benchmark::DoNotOptimize(
-            asumaneev::challenge_00::find_subsequence(large_sequence));
-    }
-}
-
-BENCHMARK(BM_first_finder);
-
-static void BM_second_finder(benchmark::State& state) {
-    for (auto _ : state) {
-        benchmark::DoNotOptimize(
-            asumaneev::challenge_00::find_subsequence_advanced(large_sequence));
-    }
-}
-
-BENCHMARK(BM_second_finder);
-
-static void BM_first_finder_complexity(benchmark::State& state) {
-    const auto sequence = random_sequence(state.range(0));
-    for (auto _ : state) {
-        benchmark::DoNotOptimize(
-            asumaneev::challenge_00::find_subsequence(sequence));
-    }
-    state.SetComplexityN(state.range(0));
-}
-
-BENCHMARK(BM_first_finder_complexity)
-    ->RangeMultiplier(2)
-    ->Range(1 << 10, 1 << 20)
-    ->Complexity(benchmark::oN);
-
-static void BM_second_finder_complexity(benchmark::State& state) {
-    const auto sequence = random_sequence(state.range(0));
-    for (auto _ : state) {
-        benchmark::DoNotOptimize(
-            asumaneev::challenge_00::find_subsequence_advanced(sequence));
-    }
-    state.SetComplexityN(state.range(0));
-}
-
-BENCHMARK(BM_second_finder_complexity)
-    ->RangeMultiplier(2)
-    ->Range(1 << 10, 1 << 20)
-    ->Complexity(benchmark::oN);
-
-BENCHMARK_MAIN();
-
-#endif  // PERFORM_BENCHMARK

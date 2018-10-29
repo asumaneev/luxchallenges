@@ -1,5 +1,7 @@
 project(challenge.00.task)
 
+# task library target
+
 add_library(${PROJECT_NAME} INTERFACE)
 
 target_include_directories(${PROJECT_NAME}
@@ -15,18 +17,36 @@ target_sources(${PROJECT_NAME}
 )
 
 set(PROJECT_NAME_EXE ${PROJECT_NAME}.exe)
+set(PROJECT_NAME_BENCH ${PROJECT_NAME}.bench)
+
+# task example target
 
 add_executable(${PROJECT_NAME_EXE} EXCLUDE_FROM_ALL)
 
 target_sources(${PROJECT_NAME_EXE}
+    PUBLIC
+        src/main.hpp
     PRIVATE
         src/main.cpp
 )
 
 target_link_libraries(${PROJECT_NAME_EXE} ${PROJECT_NAME})
-if (DEFINED PERFORM_BENCHMARK)
-    target_link_libraries(${PROJECT_NAME_EXE} benchmark)
-endif()
+
+# task benchmark example
+
+add_executable(${PROJECT_NAME_BENCH} EXCLUDE_FROM_ALL)
+
+target_sources(${PROJECT_NAME_BENCH}
+    PUBLIC
+        src/main.hpp
+    PRIVATE
+        src/main_bench.cpp
+)
+
+target_link_libraries(${PROJECT_NAME_BENCH}
+                      ${PROJECT_NAME}
+                      benchmark)
 
 message("LIB: ${PROJECT_NAME}")
 message("EXE: ${PROJECT_NAME_EXE}")
+message("BENCH: ${PROJECT_NAME_BENCH}")
