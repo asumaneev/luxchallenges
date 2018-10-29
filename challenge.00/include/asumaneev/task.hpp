@@ -37,7 +37,7 @@ static auto find_subsequence(container_t const& sequence) noexcept {
         sum += *it;
         input_t const sum_current = sum - sum_minimal;
 
-        if (sum_current > sum_maximal) {
+        if (sum_current >= sum_maximal) {
             sum_maximal = sum_current;
             subsequence_start = subsequence_min_start;
             subsequence_end = it;
@@ -76,7 +76,7 @@ static auto find_subsequence_advanced(container_t const& sequence) noexcept {
     for (iterator_t it = std::begin(sequence); it != std::end(sequence); ++it) {
         sum += *it;
 
-        if (sum > sum_maximal) {
+        if (sum >= sum_maximal) {
             sum_maximal = sum;
             subsequence_start = subsequence_min_start;
             subsequence_end = it;

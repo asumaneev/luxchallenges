@@ -7,6 +7,9 @@ Find:
 Subsequence defined as indicies of head (1) and tail (2)  with maximal sum of elements (3).
 Result is three numbers (1, 2, 3). Algorithm must have liear complexity of number of elements in array.
 
+> Remark:
+> Subsequence is considered of maximal length
+
 # Approaches
 I did not invented the algorithm by muself but took two here: http://e-maxx.ru/algo/maximum_average_segment
 My intentions were in building proper project structure with tests like a nice guy.
