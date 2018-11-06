@@ -9,5 +9,8 @@ target_sources(${PROJECT_NAME}
 
 target_link_libraries(${PROJECT_NAME}
                       gtest_main
-                      challenge.00.task
 )
+
+foreach(CHALLENGER ${CHALLENGERS})
+    target_link_libraries(${PROJECT_NAME} challenge.00.${CHALLENGER})
+endforeach()

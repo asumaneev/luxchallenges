@@ -1,4 +1,5 @@
 #include <asumaneev/task.hpp>
+#include <anonymous/task.hpp>
 
 #include <gtest/gtest.h>
 
@@ -20,14 +21,14 @@ class non_negative_sequence : public ::testing::Test {
     const result_t expected_result;
 };
 
-TEST_F(non_negative_sequence, first_finder) {
-    auto result = asumaneev::challenge_00::find_subsequence(sequence);
+TEST_F(non_negative_sequence, asumaneev) {
+    auto result = challenge_00::asumaneev::find_subsequence(sequence);
 
     ASSERT_EQ(result, expected_result);
 }
 
-TEST_F(non_negative_sequence, second_finder) {
-    auto result = asumaneev::challenge_00::find_subsequence_advanced(sequence);
+TEST_F(non_negative_sequence, anonymous) {
+    auto result = challenge_00::anonymous::find_subsequence(sequence);
 
     ASSERT_EQ(result, expected_result);
 }
@@ -43,14 +44,14 @@ class negative_sequence : public ::testing::Test {
     const result_t expected_result;
 };
 
-TEST_F(negative_sequence, first_finder) {
-    auto result = asumaneev::challenge_00::find_subsequence(sequence);
+TEST_F(negative_sequence, asumaneev) {
+    auto result = challenge_00::asumaneev::find_subsequence(sequence);
 
     ASSERT_EQ(result, expected_result);
 }
 
-TEST_F(negative_sequence, second_finder) {
-    auto result = asumaneev::challenge_00::find_subsequence_advanced(sequence);
+TEST_F(negative_sequence, anonymous) {
+    auto result = challenge_00::anonymous::find_subsequence(sequence);
 
     ASSERT_EQ(result, expected_result);
 }
@@ -65,14 +66,14 @@ class zero_sequence : public ::testing::Test {
     const result_t expected_result;
 };
 
-TEST_F(zero_sequence, first_finder) {
-    auto result = asumaneev::challenge_00::find_subsequence(sequence);
+TEST_F(zero_sequence, asumaneev) {
+    auto result = challenge_00::asumaneev::find_subsequence(sequence);
 
     ASSERT_EQ(result, expected_result);
 }
 
-TEST_F(zero_sequence, second_finder) {
-    auto result = asumaneev::challenge_00::find_subsequence_advanced(sequence);
+TEST_F(zero_sequence, anonymous) {
+    auto result = challenge_00::anonymous::find_subsequence(sequence);
 
     ASSERT_EQ(result, expected_result);
 }
@@ -87,14 +88,14 @@ class two_max : public ::testing::Test {
     const result_t expected_result;
 };
 
-TEST_F(two_max, first_finder) {
-    auto result = asumaneev::challenge_00::find_subsequence(sequence);
+TEST_F(two_max, asumaneev) {
+    auto result = challenge_00::asumaneev::find_subsequence(sequence);
 
     ASSERT_EQ(result, expected_result);
 }
 
-TEST_F(two_max, second_finder) {
-    auto result = asumaneev::challenge_00::find_subsequence_advanced(sequence);
+TEST_F(two_max, anonymous) {
+    auto result = challenge_00::anonymous::find_subsequence(sequence);
 
     ASSERT_EQ(result, expected_result);
 }

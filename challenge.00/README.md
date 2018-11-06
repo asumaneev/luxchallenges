@@ -15,7 +15,7 @@ I did not invented the algorithm by muself but took two here: http://e-maxx.ru/a
 My intentions were in building proper project structure with tests like a nice guy.
 As a result, I played with templates (hello STL!) and bechmarking those two approaches with google benchmark.
 
-The first approach is function ```find_subsequence``` (aka *first\_finder*), the second one is ```find_subsequence_advanced``` (aka *second\_finder*).
+The first approach is function ```asumaneev::find_subsequence```, the second one is ```anonymous::find_subsequence```.
 
 #### Comparison
 The second approach looks a little bit better (in **1.03** times) without optimization (but who would do that?).
@@ -32,17 +32,19 @@ Environment:
 ```
 mkdir build; cd build
 cmake ..
-cmake --build . --target challenge.00.task.exe [-j 4]
-./challenge.00/challenge.00.task.exe
+cmake --build . --target challenge.00.example [-j 4]
+./challenge.00/challenge.00.example
 ```
 ##### Benchmark solutions
+
 ```
 mkdir build; cd build
 cmake ..
-cmake --build . --target challenge.00.task.bench [-j 4]
-./challenge.00/challenge.00.task.bench
+cmake --build . --target challenge.00.bench [-j 4]
+./challenge.00/challenge.00.bench
 ```
 ##### Tests
+
 ```
 mkdir build; cd build
 cmake ..
