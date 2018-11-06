@@ -9,11 +9,8 @@ if (CMAKE_CXX_CPPCHECK)
     list(
         APPEND CMAKE_CXX_CPPCHECK
             "--enable=all"
-            "--inconclusive"
-            "--suppress=missingIncludeSystem"
-            "--force"
-            "--inline-suppr"
             "-i${CMAKE_CURRENT_SOURCE_DIR}/3rdparty"
+            "--suppress=missingIncludeSystem"
     )
 else()
     message(WARNING "cppcheck is not found")
