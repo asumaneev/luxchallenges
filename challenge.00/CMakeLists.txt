@@ -10,13 +10,11 @@ set(CHALLENGERS
 
 foreach(CHALLENGER ${CHALLENGERS})
 
-    message("Challenger: ${CHALLENGER}")
+    message("${CHALLENGE_NAME} challenger: ${CHALLENGER}")
 
     add_subdirectory(src/${CHALLENGER})
 
 endforeach(CHALLENGER)
-
-
 
 ##############################################
 # task example target

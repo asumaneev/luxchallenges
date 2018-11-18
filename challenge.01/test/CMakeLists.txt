@@ -17,5 +17,5 @@ target_compile_definitions(${PROJECT_NAME}
 )
 
 foreach(CHALLENGER ${CHALLENGERS})
-    target_link_libraries(${PROJECT_NAME} challenge.01.${CHALLENGER})
+    target_link_libraries(${PROJECT_NAME} ${CHALLENGE_NAME}.${CHALLENGER})
 endforeach()
