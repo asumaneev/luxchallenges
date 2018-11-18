@@ -24,3 +24,4 @@ add_subdirectory(3rdparty/gbench)
 
 add_subdirectory(challenge.00)
 add_subdirectory(challenge.01)
+add_subdirectory(challenge.02)

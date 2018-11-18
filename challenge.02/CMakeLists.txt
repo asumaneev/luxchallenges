@@ -1,11 +1,10 @@
-set(CHALLENGE_NAME challenge.00)
+set(CHALLENGE_NAME challenge.02)
 
 ##############################################
 # tasks
 
 set(CHALLENGERS
     asumaneev
-    anonymous
 )
 
 foreach(CHALLENGER ${CHALLENGERS})
