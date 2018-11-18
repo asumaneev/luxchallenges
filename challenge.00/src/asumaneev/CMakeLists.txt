@@ -1,4 +1,4 @@
-project(challenge.00.asumaneev)
+project(${CHALLENGE_NAME}.asumaneev)
 
 set(INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../../include)
 

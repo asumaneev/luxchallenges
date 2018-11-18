@@ -1,4 +1,4 @@
-project(challenge.00.example)
+project(${CHALLENGE_NAME}.example)
 
 add_executable(${PROJECT_NAME} EXCLUDE_FROM_ALL)
 

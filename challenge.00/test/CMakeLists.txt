@@ -1,4 +1,4 @@
-project (challenge.00.test)
+project(${CHALLENGE_NAME}.test)
 
 add_executable(${PROJECT_NAME})
 

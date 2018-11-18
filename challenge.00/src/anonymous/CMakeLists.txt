@@ -1,4 +1,4 @@
-project(challenge.00.anonymous)
+project(${CHALLENGE_NAME}.anonymous)
 
 set(INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../../include)
 

@@ -1,3 +1,5 @@
+set(CHALLENGE_NAME challenge.00)
+
 ##############################################
 # tasks
 
