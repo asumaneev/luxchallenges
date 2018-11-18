@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.10)
 
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 set(BENCHMARK_ENABLE_TESTING OFF CACHE BOOL "Suppressing benchmark's tests" FORCE)
 set(BENCHMARK_ENABLE_INSTALL OFF CACHE BOOL "Suppressing benchmark's installation" FORCE)
 set(BENCHMARK_ENABLE_GTEST_TESTS OFF CACHE BOOL "Suppressing benchmark's tests" FORCE)
@@ -20,3 +23,4 @@ add_subdirectory(3rdparty/gtest)
 add_subdirectory(3rdparty/gbench)
 
 add_subdirectory(challenge.00)
+add_subdirectory(challenge.01)
